@@ -1,18 +1,25 @@
 import React from 'react';
-import DifferenceFinder from './components/DifferenceFinder'; 
-import './index.css'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header';
+import ProductCategory from './components/ProductCategory';
+import ProductDetailsContainer from './components/ProductDetailsContainer';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <>
-    <div className='bg-[#f8f8f8] w-full h-12 mb-10'>
-    <h1 className=' text-[#8c7777] ml-6 md:ml-20 pt-2 p-0'>List Difference Finder</h1>
-    </div>
-
-      <DifferenceFinder /> 
-
-    </>
+    <Router>
+      <Header />
+      <div className="md:flex">
+        <div className="md:w-3/10">
+          <ProductCategory />
+        </div>
+        <div className="md:w-7/10 ml-4">
+          <ProductDetailsContainer />
+        </div>
+      </div>
+      <Footer/>
+    </Router>
   );
-};
+}
 
 export default App;
